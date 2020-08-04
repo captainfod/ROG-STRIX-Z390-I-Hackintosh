@@ -391,6 +391,42 @@
 	<dict>
 		<key>Add</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,1,0/0,0/0,0/0,1</string>
+				<key>device_type</key>
+				<string>Audio device</string>
+				<key>model</key>
+				<string>Navi 10 HDMI Audio</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,1,0/0,0</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>Navi 10 XL Upstream Port of PCI Express Switch</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,1,0/0,0/0,0</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>Navi 10 XL Downstream Port of PCI Express Switch</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,20,0</string>
+				<key>device_type</key>
+				<string>USB controller</string>
+				<key>model</key>
+				<string>Cannon Lake PCH USB 3.1 xHCI Host Controller</string>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -609,6 +645,14 @@
 				<string></string>
 				<key>MinKernel</key>
 				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>BundlePath</key>
+				<string>AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext</string>
+				<key>Enabled</key>
+				<true/>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -928,20 +972,6 @@
 				<key>Path</key>
 				<string>BootKicker.efi</string>
 			</dict>
-			<dict>
-				<key>Arguments</key>
-				<string></string>
-				<key>Auxiliary</key>
-				<false/>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Name</key>
-				<string>CleanNvram</string>
-				<key>Path</key>
-				<string>CleanNvram.efi</string>
-			</dict>
 		</array>
 	</dict>
 	<key>NVRAM</key>
@@ -962,7 +992,7 @@
 				<key>booter-fileset-basesystem</key>
 				<data>AA==</data>
 				<key>boot-args</key>
-				<string>-v agdpmod=pikera vsmcgen=1 -brcmfxbeta brcmfx-country=#a</string>
+				<string>-v agdpmod=pikera vsmcgen=1 brcmfx-driver=2 brcmfx-country=#a</string>
 				<key>csr-active-config</key>
 				<data>/w8AAA==</data>
 				<key>prev-lang:kbd</key>
@@ -978,6 +1008,7 @@
 			</array>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<array>
+				<string>csr-active-config</string>
 				<string>boot-args</string>
 			</array>
 		</dict>
@@ -1023,7 +1054,7 @@
 			<key>MLB</key>
 			<string></string>
 			<key>ROM</key>
-			<data>AA==</data>
+			<data>AAAAAA==</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
